@@ -4,6 +4,7 @@ import Navbar from "../Componentes/Navbar/Navbar";
 import Home from "../Pages/Authentication/Home";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import Footer from "../Componentes/Navbar/Footer/Footer";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         {
           path:'/registration',
           element:<Register></Register>
+        },
+        {
+          path:'/Footer',
+          element:<Footer></Footer>
         }
       ]
     },
