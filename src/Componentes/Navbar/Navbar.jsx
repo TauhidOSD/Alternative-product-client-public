@@ -3,8 +3,8 @@ const Navbar = () => {
       <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
         <div className='flex-1'>
           <div className='flex gap-2 items-center'>
-            <img className='w-auto h-7' src='' alt='' />
-            <span className='font-bold'>SoloSphere</span>
+            <img className='w-auto h-[48px]' src='https://i.postimg.cc/8kxSTFKv/360-F-122726698-wz-Zycyye8-YAOlt-WUZf3f-KO0-H4-YB4cjx-O.jpg' alt='' />
+            <span className='font-bold'>Alternative</span>
           </div>
         </div>
         <div className='flex-none'>
