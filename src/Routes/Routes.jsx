@@ -5,6 +5,7 @@ import Home from "../Pages/Authentication/Home";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import Footer from "../Componentes/Navbar/Footer/Footer";
+import Queries from "../Pages/Authentication/Queries/Queries";
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
         {
           path:'/Footer',
           element:<Footer></Footer>
+        },
+        {
+          path:'/Queries',
+          element:<Queries></Queries>
         }
       ]
     },
