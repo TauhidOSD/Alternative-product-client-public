@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../LayOut/Main";
+import Navbar from "../Componentes/Navbar/Navbar";
 
 const router = createBrowserRouter([
     {
@@ -7,7 +8,8 @@ const router = createBrowserRouter([
       element: <Main></Main>,
       children: [
         {
-            // path:'/'
+           path:'/Navbar',
+           element:<Navbar></Navbar>
         }
       ]
     },

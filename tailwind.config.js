@@ -12,7 +12,7 @@ export default {
       }
     },
   },
-  require('daisyui'),
+  plugins: [require('daisyui'),],
 
 }
 
