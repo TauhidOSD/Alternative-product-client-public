@@ -7,10 +7,10 @@ const Navbar = () => {
     return (
       <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
         <div className='flex-1'>
-          <div className='flex gap-2 items-center'>
+          <Link to='/' className='flex gap-2 items-center'>
             <img className='w-auto h-[48px]' src='https://i.postimg.cc/8kxSTFKv/360-F-122726698-wz-Zycyye8-YAOlt-WUZf3f-KO0-H4-YB4cjx-O.jpg' alt='' />
             <span className='font-bold'>Alternative</span>
-          </div>
+          </Link>
         </div>
         <div className='flex-none'>
           <ul className='menu menu-horizontal px-1'>
