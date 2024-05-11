@@ -1,7 +1,7 @@
 const Contuct = () => {
   return (
     <div>
-        <section className="my-6">
+        <section className="my-6 md:my-16">
         <div className="md:text-center px-4 md:px-32 md:mt-6">
       <h1 className="text-3xl md:text-4xl font-bold mb-2 md:mb-4">
        Please <span className="text-blue-500">Contact</span> US ?{" "}
