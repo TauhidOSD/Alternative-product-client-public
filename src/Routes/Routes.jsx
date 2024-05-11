@@ -6,6 +6,8 @@ import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import Footer from "../Componentes/Navbar/Footer/Footer";
 import Queries from "../Pages/Authentication/Queries/Queries";
+import OwnQuries from "../Pages/Authentication/OwnQuries/OwnQuries";
+import AddQuries from "../Pages/Authentication/AddQuries/AddQuries";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
         {
           path:'/Queries',
           element:<Queries></Queries>
+        },
+        {
+          path:'/OwnQures',
+          element:<OwnQuries></OwnQuries>
+        },
+        {
+          path:'/AddQuries',
+          element:<AddQuries></AddQuries>
         }
       ]
     },

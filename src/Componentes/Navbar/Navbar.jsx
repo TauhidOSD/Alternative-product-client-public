@@ -54,7 +54,7 @@ const Navbar = () => {
                 <div className="justify-between">Recommendations For Me</div>
               </li>
               <li>
-                <div>My Queries</div>
+                <Link to='/OwnQures'>My Queries</Link>
               </li>
               <li>
                 <div>My recommendations </div>
