@@ -9,6 +9,7 @@ import Queries from "../Pages/Authentication/Queries/Queries";
 import OwnQuries from "../Pages/Authentication/OwnQuries/OwnQuries";
 import AddQuries from "../Pages/Authentication/AddQuries/AddQuries";
 import RecentQuries from "../Pages/Authentication/RecentQuries/RecentQuries";
+import OurrecentText from "../Pages/Authentication/OurrecentText/OurrecentText";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
           path:'/RecentQuries',
           element:<RecentQuries></RecentQuries>,
+        },
+        {
+          path:'/recentText',
+          element:<OurrecentText></OurrecentText>
         }
       ]
     },

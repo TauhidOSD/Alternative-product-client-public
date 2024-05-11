@@ -43,19 +43,25 @@ const RecentQuries = () => {
                 {Card?.QueryTitle}
               </a>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Molestie parturient et sem ipsum volutpat vel. Natoque sem et
-                aliquam mauris egestas quam volutpat viverra. In pretium nec
-                senectus erat. Et malesuada lobortis.
+                {Card?.text}
               </p>
+            </div>
+            <div className="my-4">
+              <div className="flex justify-between">
+                <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+                  {Card?.AlternationReason}
+                </span>
+                <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+                  {Card?.category}
+                </span>
+              </div>
             </div>
 
             <div className="mt-4">
-              <div className="flex items-center">
-                
+              <div className="flex items-center justify-between">
                 <div className="flex items-center">
                   <img
-                    className="object-cover h-10 rounded-full"
+                    className="object-cover w-10 h-10 rounded-full"
                     src={Card?.imageAsThumbnail}
                     alt="Avatar"
                   />
@@ -68,9 +74,19 @@ const RecentQuries = () => {
                     {Card?.name}
                   </a>
                 </div>
-                <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">
-                  {Card?.DatePosted}
-                </span>
+                <div className="flex">
+                  <div>
+                  <img className="h-6 w-6 rounded-full"
+                    src="https://i.postimg.cc/jqc2LnDF/calendar-white-background-3d-rendering-519469-7595.jpg"
+                    alt=""
+                  />
+                  </div>
+                  <div>
+                  <span className=" mx-1 text-xs text-gray-600 dark:text-gray-300">
+                    {Card?.DatePosted}
+                  </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
