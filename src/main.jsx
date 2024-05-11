@@ -13,9 +13,11 @@ import { Toaster } from 'react-hot-toast';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
+    <div className='px-4 md:px-12'>
+    <AuthProvider >
     <RouterProvider router={router} />
     <Toaster></Toaster>
     </AuthProvider>
+    </div>
   </React.StrictMode>,
 )

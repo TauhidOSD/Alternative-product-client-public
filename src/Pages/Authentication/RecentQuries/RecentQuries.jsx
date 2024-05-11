@@ -1,0 +1,83 @@
+"react-router-dom";
+
+import { useEffect, useState } from "react";
+
+const RecentQuries = () => {
+  const [Cards, setCards] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/RecentQueries")
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+  }, []);
+  console.log(Cards);
+
+  return (
+    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 my-10  ">
+      {Cards.map((Card) => (
+        <div
+          key={Card._id}
+          className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
+        >
+          <img
+            className="object-cover w-full h-64"
+            src={Card?.ProductImage}
+            alt="Article"
+          />
+
+          <div className="p-6">
+            <div>
+              <div className="flex justify-between">
+                <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+                  {Card?.ProductName}
+                </span>
+                <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
+                  {Card?.BrandName}
+                </span>
+              </div>
+              <a
+                href="#"
+                className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline"
+                tabIndex="0"
+                role="link"
+              >
+                {Card?.QueryTitle}
+              </a>
+              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Molestie parturient et sem ipsum volutpat vel. Natoque sem et
+                aliquam mauris egestas quam volutpat viverra. In pretium nec
+                senectus erat. Et malesuada lobortis.
+              </p>
+            </div>
+
+            <div className="mt-4">
+              <div className="flex items-center">
+                
+                <div className="flex items-center">
+                  <img
+                    className="object-cover h-10 rounded-full"
+                    src={Card?.imageAsThumbnail}
+                    alt="Avatar"
+                  />
+                  <a
+                    href="#"
+                    className="mx-2 font-semibold text-gray-700 dark:text-gray-200"
+                    tabIndex="0"
+                    role="link"
+                  >
+                    {Card?.name}
+                  </a>
+                </div>
+                <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">
+                  {Card?.DatePosted}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default RecentQuries;
