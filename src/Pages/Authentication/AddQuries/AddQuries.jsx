@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 const AddQuries = () => {
 
     const handleAddPlace = (event) => {
@@ -32,6 +33,14 @@ const AddQuries = () => {
         .then(res =>res.json())
         .then(data=>{
             console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'User added Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+            }
         })
         
     }
