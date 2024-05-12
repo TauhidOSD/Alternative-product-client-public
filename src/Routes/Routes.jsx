@@ -11,9 +11,7 @@ import AddQuries from "../Pages/Authentication/AddQuries/AddQuries";
 import RecentQuries from "../Pages/Authentication/RecentQuries/RecentQuries";
 import OurrecentText from "../Pages/Authentication/OurrecentText/OurrecentText";
 import UpdateProduct from "../Pages/Authentication/UpdateProduct/UpdateProduct";
-// import QueriDetails from "../Pages/Authentication/QueriDetails/QueriDetails";
-// import MyQu_Details from "../Pages/Authentication/MyQu_Details/MyQu_Details";
-// import NavQuDetails from "../Pages/Authentication/NavQuDetails/NavQuDetails";
+import PrivateRoute from "../Pages/Authentication/PrivateRoute/PrivateRoute";
 import QueriDetails from "../Pages/Authentication/QueriDetails/QueriDetails";
 
 const router = createBrowserRouter([
@@ -47,12 +45,16 @@ const router = createBrowserRouter([
         },
         {
           path:'/OwnQures',
-          element:<OwnQuries></OwnQuries>,
+          element:<PrivateRoute>
+            <OwnQuries></OwnQuries>
+          </PrivateRoute>,
         
         },
         {
           path:'/AddQuries',
-          element:<AddQuries></AddQuries>
+          element:<PrivateRoute>
+            <AddQuries></AddQuries>
+          </PrivateRoute>
         },
         {
           path:'/RecentQuries',
