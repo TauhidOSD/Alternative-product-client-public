@@ -10,6 +10,7 @@ import OwnQuries from "../Pages/Authentication/OwnQuries/OwnQuries";
 import AddQuries from "../Pages/Authentication/AddQuries/AddQuries";
 import RecentQuries from "../Pages/Authentication/RecentQuries/RecentQuries";
 import OurrecentText from "../Pages/Authentication/OurrecentText/OurrecentText";
+import UpdateProduct from "../Pages/Authentication/UpdateProduct/UpdateProduct";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         {
           path:'/recentText',
           element:<OurrecentText></OurrecentText>
+        },
+        {
+          path:"/updateProduct/:id",
+          element:<UpdateProduct></UpdateProduct>,
+          loader: ({params})=>fetch(`http://localhost:5000/newQueries/${params.id}`)
         }
       ]
     },
