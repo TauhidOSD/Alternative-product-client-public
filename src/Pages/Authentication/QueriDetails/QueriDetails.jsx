@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData,  useParams } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const QueriDetails = () => {
+
+    const {user}=useContext(AuthContext);
+    console.log(user);
 
     const [product,setProduct]=useState({});
     const {_id}=useParams();
@@ -15,13 +19,14 @@ const QueriDetails = () => {
     console.log(product);
 
     return (
-        <div
+        <div 
           key={product?._id }
-          className=" lg:w-[60%] md:w-full mx-auto  max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
+          className=" my-6 lg:w-[60%] md:w-full mx-auto  max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
         >
           <img
             className="object-cover w-full h-64"
-            src={product?.ProductImage}
+            src={product?.P_URL}
+                
             alt="Article"
           />
 
@@ -29,10 +34,12 @@ const QueriDetails = () => {
             <div>
               <div className="flex justify-between">
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {product?.ProductName}
+                  {product?.P_name}
+
                 </span>
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {product?.BrandName}
+                  {product?.P_Brand}
+
                 </span>
               </div>
               <a
@@ -42,9 +49,11 @@ const QueriDetails = () => {
                 role="link"
               >
                 {product?.QueryTitle}
+
               </a>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {product?.text}
+                {product?.BoycottingReason}
+
               </p>
             </div>
             <div className="my-4">
@@ -63,7 +72,8 @@ const QueriDetails = () => {
                 <div className="flex items-center">
                   <img
                     className="object-cover w-10 h-10 rounded-full"
-                    src={product?.imageAsThumbnail}
+                    src={user?.photoURL}
+                    
                     alt="Avatar"
                   />
                   <a
@@ -85,7 +95,8 @@ const QueriDetails = () => {
                   </div>
                   <div>
                     <span className=" mx-1 text-xs text-gray-600 dark:text-gray-300">
-                      {product?.DatePosted}
+                      {user?.lastRefreshAt}
+
                     </span>
                   </div>
                 </div>
