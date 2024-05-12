@@ -42,7 +42,8 @@ const router = createBrowserRouter([
         },
         {
           path:'/OwnQures',
-          element:<OwnQuries></OwnQuries>
+          element:<OwnQuries></OwnQuries>,
+        
         },
         {
           path:'/AddQuries',
