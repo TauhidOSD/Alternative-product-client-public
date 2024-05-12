@@ -12,6 +12,8 @@ import RecentQuries from "../Pages/Authentication/RecentQuries/RecentQuries";
 import OurrecentText from "../Pages/Authentication/OurrecentText/OurrecentText";
 import UpdateProduct from "../Pages/Authentication/UpdateProduct/UpdateProduct";
 import QueriDetails from "../Pages/Authentication/QueriDetails/QueriDetails";
+// import MyQu_Details from "../Pages/Authentication/MyQu_Details/MyQu_Details";
+import NavQuDetails from "../Pages/Authentication/NavQuDetails/NavQuDetails";
 
 const router = createBrowserRouter([
     {
@@ -68,6 +70,16 @@ const router = createBrowserRouter([
           path:"/:_id",
           element:<QueriDetails></QueriDetails>,
           loader: ()=> fetch('http://localhost:5000/RecentQueries')
+        },
+        // {
+        //   path:"/:_id",
+        //   element:<MyQu_Details></MyQu_Details>,
+        //   loader: ()=> fetch('http://localhost:5000/newQueries')
+        // },
+        {
+          path:"/:_id",
+          errorElement:<NavQuDetails></NavQuDetails>,
+          loader: ()=> fetch('http://localhost:5000/newQueries')
         }
       ]
     },

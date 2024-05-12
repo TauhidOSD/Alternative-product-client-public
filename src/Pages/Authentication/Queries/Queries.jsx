@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Queries = () => {
@@ -77,7 +78,7 @@ const Queries = () => {
 
                   
                   <th>
-                    <button className="btn btn-ghost btn-xs">details</button>
+                    <Link to={`/${Card?._id}`} className="btn btn-ghost btn-xs bg-blue-400">recommend</Link>
                   </th>
                 </tr>
               </tbody>

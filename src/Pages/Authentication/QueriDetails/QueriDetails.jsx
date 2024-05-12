@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData,  useParams } from "react-router-dom";
 
 const QueriDetails = () => {
 
-    const [data,setData]=useState({});
+    const [product,setProduct]=useState({});
     const {_id}=useParams();
     const details =useLoaderData();
 
     useEffect(()=>{
         const findCart =details?.find((item)=>item._id===_id);
          
-        setData(findCart);
+        setProduct(findCart);
     },[_id,details])
-    console.log(data);
+    console.log(product);
 
     return (
         <div
-          key={data._id}
+          key={product?._id }
           className=" lg:w-[60%] md:w-full mx-auto  max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
         >
           <img
             className="object-cover w-full h-64"
-            src={data?.ProductImage}
+            src={product?.ProductImage}
             alt="Article"
           />
 
@@ -29,10 +29,10 @@ const QueriDetails = () => {
             <div>
               <div className="flex justify-between">
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {data?.ProductName}
+                  {product?.ProductName}
                 </span>
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {data?.BrandName}
+                  {product?.BrandName}
                 </span>
               </div>
               <a
@@ -41,19 +41,19 @@ const QueriDetails = () => {
                 tabIndex="0"
                 role="link"
               >
-                {data?.QueryTitle}
+                {product?.QueryTitle}
               </a>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {data?.text}
+                {product?.text}
               </p>
             </div>
             <div className="my-4">
               <div className="flex justify-between">
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {data?.AlternationReason}
+                  {product?.AlternationReason}
                 </span>
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {data?.category}
+                  {product?.category}
                 </span>
               </div>
             </div>
@@ -63,7 +63,7 @@ const QueriDetails = () => {
                 <div className="flex items-center">
                   <img
                     className="object-cover w-10 h-10 rounded-full"
-                    src={data?.imageAsThumbnail}
+                    src={product?.imageAsThumbnail}
                     alt="Avatar"
                   />
                   <a
@@ -72,7 +72,7 @@ const QueriDetails = () => {
                     tabIndex="0"
                     role="link"
                   >
-                    {data?.name}
+                    {product?.name}
                   </a>
                 </div>
                 <div className="flex">
@@ -85,7 +85,7 @@ const QueriDetails = () => {
                   </div>
                   <div>
                     <span className=" mx-1 text-xs text-gray-600 dark:text-gray-300">
-                      {data?.DatePosted}
+                      {product?.DatePosted}
                     </span>
                   </div>
                 </div>
