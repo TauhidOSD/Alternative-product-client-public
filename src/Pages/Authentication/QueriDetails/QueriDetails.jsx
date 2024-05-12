@@ -1,27 +1,27 @@
-"react-router-dom";
-
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
-const RecentQuries = () => {
-  const [Cards, setCards] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/RecentQueries")
-      .then((res) => res.json())
-      .then((data) => setCards(data));
-  }, []);
-  console.log(Cards);
+const QueriDetails = () => {
 
-  return (
-    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 my-10  ">
-      {Cards.map((Card) => (
+    const [data,setData]=useState({});
+    const {_id}=useParams();
+    const details =useLoaderData();
+
+    useEffect(()=>{
+        const findCart =details?.find((item)=>item._id===_id);
+         
+        setData(findCart);
+    },[_id,details])
+    console.log(data);
+
+    return (
         <div
-          key={Card._id}
-          className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
+          key={data._id}
+          className=" lg:w-[60%] md:w-full mx-auto  max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800"
         >
           <img
             className="object-cover w-full h-64"
-            src={Card?.ProductImage}
+            src={data?.ProductImage}
             alt="Article"
           />
 
@@ -29,10 +29,10 @@ const RecentQuries = () => {
             <div>
               <div className="flex justify-between">
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {Card?.ProductName}
+                  {data?.ProductName}
                 </span>
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {Card?.BrandName}
+                  {data?.BrandName}
                 </span>
               </div>
               <a
@@ -41,19 +41,19 @@ const RecentQuries = () => {
                 tabIndex="0"
                 role="link"
               >
-                {Card?.QueryTitle}
+                {data?.QueryTitle}
               </a>
               <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                {Card?.text}
+                {data?.text}
               </p>
             </div>
             <div className="my-4">
               <div className="flex justify-between">
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {Card?.AlternationReason}
+                  {data?.AlternationReason}
                 </span>
                 <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">
-                  {Card?.category}
+                  {data?.category}
                 </span>
               </div>
             </div>
@@ -63,7 +63,7 @@ const RecentQuries = () => {
                 <div className="flex items-center">
                   <img
                     className="object-cover w-10 h-10 rounded-full"
-                    src={Card?.imageAsThumbnail}
+                    src={data?.imageAsThumbnail}
                     alt="Avatar"
                   />
                   <a
@@ -72,7 +72,7 @@ const RecentQuries = () => {
                     tabIndex="0"
                     role="link"
                   >
-                    {Card?.name}
+                    {data?.name}
                   </a>
                 </div>
                 <div className="flex">
@@ -85,22 +85,16 @@ const RecentQuries = () => {
                   </div>
                   <div>
                     <span className=" mx-1 text-xs text-gray-600 dark:text-gray-300">
-                      {Card?.DatePosted}
+                      {data?.DatePosted}
                     </span>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="text-start my-3 md:my-6">
-              <Link  to={`/${Card?._id}`} className="w-full px-5 py-2 mt-6 text-sm tracking-wider text-white uppercase transition-colors duration-300 transform bg-blue-600 rounded-lg lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-              recommend
-              </Link>
-            </div>
+            
           </div>
         </div>
-      ))}
-    </div>
-  );
+    );
 };
 
-export default RecentQuries;
+export default QueriDetails;
