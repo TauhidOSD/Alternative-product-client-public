@@ -17,8 +17,8 @@ const Queries = () => {
     return (
         <div className="my-12">
            <section>
-        {Cards.map((Card) => (
-          <div key={Card._id} className="overflow-x-auto">
+        {Cards.map((Card,index) => (
+          <div key={Card._id + index} className="overflow-x-auto">
             <table className="table my-6">
               {/* head */}
               <thead>

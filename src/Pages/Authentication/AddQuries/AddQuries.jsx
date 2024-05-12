@@ -1,6 +1,8 @@
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { useContext } from 'react';
 const AddQuries = () => {
-
+    const {user } = useContext(AuthContext)
     const handleAddPlace = (event) => {
         event.preventDefault();
     
@@ -18,7 +20,7 @@ const AddQuries = () => {
             P_URL,
             QueryTitle,
             BoycottingReason,
-         
+            email: user?.email
         }
         console.log(Quries);
 

@@ -1,9 +1,23 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import UseAuth from "../UseAuth/UseAuth";
 
 const OwnQuries = () => {
+
+  // const {user}=useContext(AuthContext)
+  const {user} =UseAuth() || {};
+  console.log(user);
+
+  const [Cards, setCards] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/newQueries/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => setCards(data));
+  }, [user]);
+  console.log(Cards);
+
+
 
   const handleDelete=_id=>{
     console.log(_id);
@@ -40,15 +54,8 @@ const OwnQuries = () => {
   }
 
 
-  const {user}=useContext(AuthContext)
 
-  const [Cards, setCards] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/newQueries")
-      .then((res) => res.json())
-      .then((data) => setCards(data));
-  }, []);
-  console.log(Cards);
+  
 
   return (
     <div>
@@ -146,6 +153,7 @@ const OwnQuries = () => {
 
                   <th>
                     <button onClick={()=>handleDelete(Card?._id)} 
+                    
                   
                     className="text-gray-500 transition-colors duration-200 dark:hover:text-red-500 dark:text-gray-300 hover:text-red-500 focus:outline-none">
                       <svg 
