@@ -20,7 +20,7 @@ const googleProvider = new GoogleAuthProvider()
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
     setLoading(true)
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
   }
 
   const signIn = (email, password) => {
-    setLoading(true)
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
   }
 
@@ -58,7 +58,7 @@ const AuthProvider = ({ children }) => {
 
       setUser(currentUser)
       console.log('CurrentUser-->', currentUser)
-      setLoading(false)
+      setLoading(false);
       // if user exists than isuue a token
       if(currentUser){
         axios.post('http://localhost:5000/jwt',loggedUser, { withCredential:true})
