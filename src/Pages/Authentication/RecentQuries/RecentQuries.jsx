@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const RecentQuries = () => {
   const [Cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/RecentQueries")
+    fetch("http://localhost:5000/RecentQueries",{credentials:'include'})
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
