@@ -1,15 +1,20 @@
 "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 // import { Link } from "react-router-dom";
 
 const RecentQuries = () => {
+
+  const {user} =useContext(AuthContext);
   const [Cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/RecentQueries",{credentials:'include'})
+    if(user?.email){
+      fetch(`http://localhost:5000/RecentQueries?email=${user?.email}`,{credentials:'include'})
       .then((res) => res.json())
       .then((data) => setCards(data));
-  }, []);
+    }
+  }, [user]);
   console.log(Cards);
 
   return (
