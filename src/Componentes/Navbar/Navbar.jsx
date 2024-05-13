@@ -16,6 +16,7 @@ const Navbar = () => {
 
   return (
     < >
+    
       <div className="md:navbar hidden  bg-base-100 shadow-sm container px-4 mx-auto">
       <div className="flex-1">
         <Link to="/" className="flex gap-2 items-center">
