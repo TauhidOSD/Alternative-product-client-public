@@ -61,14 +61,14 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
       // if user exists than isuue a token
       if(currentUser){
-        axios.post('https://alternative-project.vercel.app/jwt',loggedUser, { withCredential:true})
+        axios.post('http://localhost:5000/jwt',loggedUser, { withCredential:true})
         .then(res =>{
           // console.log('token response',res.data);
           document.cookie='token'+'='+res.data.token
         })
       }
       else{
-        axios.post('https://alternative-project.vercel.app/logout',loggedUser,{
+        axios.post('http://localhost:5000/logout',loggedUser,{
           withCredentials:true
         })
         .then(res=>{

@@ -67,12 +67,12 @@ const router = createBrowserRouter([
         {
           path:"/updateProduct/:id",
           element:<UpdateProduct></UpdateProduct>,
-          loader: ({params})=>fetch(`https://alternative-project.vercel.app/newQueries/${params.id}`)
+          loader: ({params})=>fetch(`http://localhost:5000/newQueries/${params.id}`)
         },
         {
           path:"/:_id",
           element:<QueriDetails></QueriDetails>,
-          loader: ()=> fetch('https://alternative-project.vercel.app/newQueries')
+          loader: ()=> fetch('http://localhost:5000/newQueries')
         },
        
       ]

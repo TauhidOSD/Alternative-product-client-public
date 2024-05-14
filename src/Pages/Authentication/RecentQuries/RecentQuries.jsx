@@ -10,7 +10,7 @@ const RecentQuries = () => {
   const [Cards, setCards] = useState([]);
   useEffect(() => {
     if(user?.email){
-      fetch(`https://alternative-project.vercel.app/RecentQueries?email=${user?.email}`)
+      fetch(`http://localhost:5000/RecentQueries?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCards(data));
     }

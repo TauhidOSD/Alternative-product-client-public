@@ -9,7 +9,7 @@ const Queries = () => {
 
   const [Cards, setCards] = useState([]);
   useEffect(() => {
-    fetch("https://alternative-project.vercel.app/newQueries")
+    fetch("http://localhost:5000/newQueries")
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);

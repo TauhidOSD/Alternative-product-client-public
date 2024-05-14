@@ -11,7 +11,7 @@ const OwnQuries = () => {
 
   const [Cards, setCards] = useState([]);
   useEffect(() => {
-    fetch(`https://alternative-project.vercel.app/newQueries/${user?.email}`)
+    fetch(`http://localhost:5000/newQueries/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, [user]);
@@ -32,7 +32,7 @@ const OwnQuries = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         
-        fetch(`https://alternative-project.vercel.app/newQueries/${_id}`,{
+        fetch(`http://localhost:5000/newQueries/${_id}`,{
           method:'DELETE'
         })
         .then(res=>res.json())

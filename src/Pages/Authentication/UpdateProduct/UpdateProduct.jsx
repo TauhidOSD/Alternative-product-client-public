@@ -25,7 +25,7 @@ const UpdateProduct = () => {
     // console.log(Quries);
 
     //sent data to the server
-    fetch(`https://alternative-project.vercel.app/newQueries/${_id}`, {
+    fetch(`http://localhost:5000/newQueries/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

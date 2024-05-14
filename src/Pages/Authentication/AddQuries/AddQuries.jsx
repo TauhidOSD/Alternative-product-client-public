@@ -25,7 +25,7 @@ const AddQuries = () => {
         // console.log(Quries);
 
         //sent data to the server
-        fetch("https://alternative-project.vercel.app/newQueries", {
+        fetch("http://localhost:5000/newQueries", {
             method:'POST',credentials: 'include',
             headers:{
                 'content-type':'application/json'
