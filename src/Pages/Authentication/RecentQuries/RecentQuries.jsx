@@ -10,7 +10,7 @@ const RecentQuries = () => {
   const [Cards, setCards] = useState([]);
   useEffect(() => {
     if(user?.email){
-      fetch(`http://localhost:5000/RecentQueries?email=${user?.email}`,{credentials:'include'})
+      fetch(`http://localhost:5000/RecentQueries?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCards(data));
     }

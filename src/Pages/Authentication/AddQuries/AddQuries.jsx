@@ -25,13 +25,13 @@ const AddQuries = () => {
         console.log(Quries);
 
         //sent data to the server
-        fetch('http://localhost:5000/newQueries',{
+        fetch('http://localhost:5000/newQueries', {
             method:'POST',
             headers:{
                 'content-type':'application/json'
             },
             body:JSON.stringify(Quries)
-        })
+        },{credentials:'include'})
         .then(res =>res.json())
         .then(data=>{
             console.log(data);
