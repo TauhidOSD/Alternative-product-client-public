@@ -19,7 +19,7 @@ const Login = () => {
         toast.success('Signin Successfull');
         navigate('/')
        } catch (err){
-        console.log(err);
+        // console.log(err);
         toast.error(err?.message)
        }
     }
@@ -29,14 +29,14 @@ const Login = () => {
        const form =e.target
        const email=form.email.value
        const pass=form.password.value
-       console.log({email,pass})
+      //  console.log({email,pass})
        try{
         const result=await signIn(email,pass)
-        console.log(result)
+        // console.log(result)
         navigate('/')
         toast.success('Signin Successful')
        }catch(err){
-        console.log(err)
+        // console.log(err)
         toast.error(err?.message)
        }
     

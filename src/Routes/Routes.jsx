@@ -74,16 +74,7 @@ const router = createBrowserRouter([
           element:<QueriDetails></QueriDetails>,
           loader: ()=> fetch('http://localhost:5000/newQueries')
         },
-        // {
-        //   path:"/:_id",
-        //   element:<MyQu_Details></MyQu_Details>,
-        //   loader: ()=> fetch('http://localhost:5000/newQueries')
-        // },
-        // {
-        //   path:"/data/:_id",
-        //   errorElement:<></>,
-        //   loader: ()=> fetch('http://localhost:5000/newQueries')
-        // }
+       
       ]
     },
   ]);

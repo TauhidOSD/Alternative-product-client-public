@@ -22,19 +22,19 @@ const AddQuries = () => {
             BoycottingReason,
             email: user?.email
         }
-        console.log(Quries);
+        // console.log(Quries);
 
         //sent data to the server
-        fetch('http://localhost:5000/newQueries', {
-            method:'POST',
+        fetch("http://localhost:5000/newQueries", {
+            method:'POST',credentials: 'include',
             headers:{
                 'content-type':'application/json'
             },
             body:JSON.stringify(Quries)
-        },{credentials:'include'})
+        },)
         .then(res =>res.json())
         .then(data=>{
-            console.log(data);
+            // console.log(data);
             if(data.insertedId){
                 Swal.fire({
                     title: 'Success!',

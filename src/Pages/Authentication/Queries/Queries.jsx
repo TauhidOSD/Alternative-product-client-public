@@ -13,7 +13,7 @@ const Queries = () => {
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, []);
-  console.log(Cards);
+  // console.log(Cards);
 
     return (
         <div className="my-12">

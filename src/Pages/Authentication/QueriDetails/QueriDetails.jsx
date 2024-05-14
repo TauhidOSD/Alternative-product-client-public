@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const QueriDetails = () => {
 
     const {user}=useContext(AuthContext);
-    console.log(user);
+    // console.log(user);
 
     const [product,setProduct]=useState({});
     const {_id}=useParams();
@@ -16,7 +16,7 @@ const QueriDetails = () => {
          
         setProduct(findCart);
     },[_id,details])
-    console.log(product);
+    // console.log(product);
 
     return (
         <div 

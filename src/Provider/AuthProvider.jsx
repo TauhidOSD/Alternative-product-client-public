@@ -57,13 +57,13 @@ const AuthProvider = ({ children }) => {
       const loggedUser={email:userEmail};
 
       setUser(currentUser)
-      console.log('CurrentUser-->', currentUser)
+      // console.log('CurrentUser-->', currentUser)
       setLoading(false);
       // if user exists than isuue a token
       if(currentUser){
         axios.post('http://localhost:5000/jwt',loggedUser, { withCredential:true})
         .then(res =>{
-          console.log('token response',res.data);
+          // console.log('token response',res.data);
           document.cookie='token'+'='+res.data.token
         })
       }

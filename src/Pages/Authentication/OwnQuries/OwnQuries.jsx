@@ -7,7 +7,7 @@ const OwnQuries = () => {
 
   // const {user}=useContext(AuthContext)
   const {user} =UseAuth() || {};
-  console.log(user);
+  // console.log(user);
 
   const [Cards, setCards] = useState([]);
   useEffect(() => {
@@ -15,12 +15,12 @@ const OwnQuries = () => {
       .then((res) => res.json())
       .then((data) => setCards(data));
   }, [user]);
-  console.log(Cards);
+  // console.log(Cards);
 
 
 
   const handleDelete=_id=>{
-    console.log(_id);
+    // console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -37,7 +37,7 @@ const OwnQuries = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-          console.log(data);
+          // console.log(data);
           if(data.deletedCount >0){
             Swal.fire({
               title: "Deleted!",

@@ -17,7 +17,7 @@ const Registration = () => {
         const photo=form.photo.value
 
         const pass=form.password.value
-        console.log({email,pass,name,photo})
+        // console.log({email,pass,name,photo})
         try{
          const result=await createUser(email,pass)
          console.log(result)
@@ -28,7 +28,7 @@ const Registration = () => {
 
          toast.success('SignUp Successful')
         }catch(err){
-         console.log(err)
+        //  console.log(err)
          toast.error(err?.message)
         }
      
@@ -41,7 +41,7 @@ const Registration = () => {
          toast.success('Signin Successfull');
          navigate('/')
         } catch (err){
-         console.log(err);
+        //  console.log(err);
          toast.error(err?.message)
         }
      }
