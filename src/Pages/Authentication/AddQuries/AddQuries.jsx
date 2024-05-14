@@ -1,6 +1,7 @@
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { useContext } from 'react';
+import axios from 'axios';
 const AddQuries = () => {
     const {user } = useContext(AuthContext)
     const handleAddPlace = (event) => {
@@ -25,17 +26,21 @@ const AddQuries = () => {
         // console.log(Quries);
 
         //sent data to the server
-        fetch("http://localhost:5000/newQueries", {
-            method:'POST',credentials: 'include',
-            headers:{
-                'content-type':'application/json'
-            },
-            body:JSON.stringify(Quries)
-        },)
-        .then(res =>res.json())
+        // fetch("https://alternative-project.vercel.app/newQueries", {
+        //     method:'POST',credentials: 'include',
+        //     headers:{
+        //         'content-type':'application/json'
+        //     },
+        //     body:JSON.stringify(Quries)
+        // },)
+
+
+        axios.post("https://alternative-project.vercel.app/newQueries",Quries,
+        )
+        // .then(res =>res.json())
         .then(data=>{
-            // console.log(data);
-            if(data.insertedId){
+            console.log(data);
+            if(data?.data?.insertedId){
                 Swal.fire({
                     title: 'Success!',
                     text: 'User added Successfully',
