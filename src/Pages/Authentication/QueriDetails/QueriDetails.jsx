@@ -21,53 +21,55 @@ const QueriDetails = () => {
     setProduct(findCart);
   }, [_id, details]);
   // console.log(product);
- 
- 
 
-  const handleformSubmition =(e) =>{
-
-   
+  const handleformSubmition = (e) => {
     e.preventDefault();
-    const form =e.target
-    const id=_id
-    const title =form.title.value
-    const image=form.image.value
-    const name =form.name.value
-    const deadline=startDate
-    const reason=form.reason.value
-    const email =form.email.value
-    console.log(id,title,image,name,reason,deadline,email)
+    const form = e.target;
+    const id = _id;
+    const title = form.title.value;
+    const image = form.image.value;
+    const name = form.name.value;
+    const deadline = startDate;
+    const reason = form.reason.value;
+    const email = form.email.value;
+    console.log(id, title, image, name, reason, deadline, email);
 
     const recomendation = {
-      id,title,image,name,deadline,reason,email
-    }
+      id,
+      title,
+      image,
+      name,
+      deadline,
+      reason,
+      email,
+    };
 
-    axios.post("https://alternative-project.vercel.app/recomendation",recomendation
-  )
-  // .then(res =>res.json())
-  .then(data=>{
-      console.log(data);
-      if(data?.data?.insertedId){
+    axios
+      .post(
+        "https://alternative-project.vercel.app/recomendation",
+        recomendation
+      )
+      // .then(res =>res.json())
+      .then((data) => {
+        console.log(data);
+        if (data?.data?.insertedId) {
           Swal.fire({
-              title: 'Success!',
-              text: 'User added Successfully',
-              icon: 'success',
-              confirmButtonText: 'Cool'
-            })
-      }
-  })
-     
-  }
+            title: "Success!",
+            text: "User added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
 
-
- 
-
-
- 
   return (
     <div className="flex flex-col md:flex-row justify-around gap-5  items-center min-h-[calc(100vh-306px)] md:max-w-screen-xl mx-auto ">
       {/* Job Details */}
-      <div key={product?._id } className="flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]">
+      <div
+        key={product?._id}
+        className="flex-1  px-4 py-7 bg-white rounded-md shadow-md md:min-h-[350px]"
+      >
         <div>
           <img className="h-[80px] w-[120px]" src={product?.P_URL} alt="" />
         </div>
@@ -122,7 +124,7 @@ const QueriDetails = () => {
             </div>
             <div>
               <label className="text-gray-700 " htmlFor="price">
-              user Email
+                user Email
               </label>
               <input
                 id="price"
@@ -171,9 +173,10 @@ const QueriDetails = () => {
 
               {/* Date Picker Input Field */}
               <DatePicker
-              className=" border p-2 rounded-md"
-               selected={startDate} onChange={(date) => setStartDate(date)} />
-
+                className=" border p-2 rounded-md"
+                selected={startDate}
+                onChange={(date) => setStartDate(date)}
+              />
             </div>
           </div>
 
