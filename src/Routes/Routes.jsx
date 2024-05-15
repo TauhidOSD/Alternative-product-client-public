@@ -13,11 +13,13 @@ import OurrecentText from "../Pages/Authentication/OurrecentText/OurrecentText";
 import UpdateProduct from "../Pages/Authentication/UpdateProduct/UpdateProduct";
 import PrivateRoute from "../Pages/Authentication/PrivateRoute/PrivateRoute";
 import QueriDetails from "../Pages/Authentication/QueriDetails/QueriDetails";
+import NotFoundPAge from "../Pages/Authentication/NotFoundPAge/NotFoundPAge";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<NotFoundPAge></NotFoundPAge>,
       children: [
         {
            path:'/Navbar',
