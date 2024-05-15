@@ -62,8 +62,8 @@ const UpdateProduct = () => {
               <input
                 type="text"
                 name="P_name"
-
                 defaultValue={P_name}
+                
                 placeholder="Product Name"
                 className="input input-bordered w-full"
                 required

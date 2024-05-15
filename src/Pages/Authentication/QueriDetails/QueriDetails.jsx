@@ -32,7 +32,15 @@ const QueriDetails = () => {
     const deadline = startDate;
     const reason = form.reason.value;
     const email = form.email.value;
-    console.log(id, title, image, name, reason, deadline, email);
+    const RecommenderEmail = form.RecommenderEmail.value;
+    const RecommenderName = form.RecommenderName.value;
+    const userName = form.userName.value;
+    const RecoProductName = form.RecoProductName.value;
+    const QueryTitle = form.QueryTitle.value;
+    const queryId = form.queryId.value;
+    const productName = form.productName.value;
+    
+    console.log(productName,queryId,QueryTitle,RecoProductName,userName,RecommenderEmail,RecommenderName,id, title, image, name, reason, deadline, email);
 
     const recomendation = {
       id,
@@ -42,6 +50,13 @@ const QueriDetails = () => {
       deadline,
       reason,
       email,
+      RecommenderName,
+      RecommenderEmail,
+      userName,
+      productName,
+      QueryTitle,
+      queryId,
+      RecoProductName
     };
 
     axios
@@ -124,7 +139,7 @@ const QueriDetails = () => {
             </div>
             <div>
               <label className="text-gray-700 " htmlFor="price">
-                user Email
+              current user email 
               </label>
               <input
                 id="price"
@@ -148,11 +163,22 @@ const QueriDetails = () => {
 
             <div>
               <label className="text-gray-700 " htmlFor="comment">
-                Recommendedproduct Name
+                Recommended product Name
               </label>
               <input
                 id="price"
-                name="name"
+                name="RecoProductName"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+                 product Name
+              </label>
+              <input
+                id="price"
+                name="productName"
                 type="text"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
@@ -168,6 +194,76 @@ const QueriDetails = () => {
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
               />
             </div>
+            {/* <h1>next</h1> */}
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+              queryId
+              </label>
+              <input
+                id="price"
+                name="queryId"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+                QueryTitle
+              </label>
+              <input
+                id="price"
+                name="QueryTitle"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+              productName
+              </label>
+              <input
+                id="price"
+                name="productName"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+              userName
+              </label>
+              <input
+                id="price"
+                name="userName"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+              currentuser Name
+              </label>
+              <input
+                id="price"
+                name="RecommenderEmail"
+                defaultValue={user?.displayName}
+
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+            <div>
+              <label className="text-gray-700 " htmlFor="comment">
+              RecommenderName
+              </label>
+              <input
+                id="price"
+                name="RecommenderName"
+                type="text"
+                className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md   focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring"
+              />
+            </div>
+           
             <div className="flex flex-col gap-2 ">
               <label className="text-gray-700">Deadline</label>
 
@@ -185,7 +281,7 @@ const QueriDetails = () => {
               type="submit"
               className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
             >
-              AddRecommendation
+              Add Recommendation
             </button>
           </div>
         </form>
