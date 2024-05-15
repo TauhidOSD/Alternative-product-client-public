@@ -76,6 +76,7 @@ const QueriDetails = () => {
                     
                     alt="Avatar"
                   />
+                  <div className="ml-3">{user?.displayName}</div>
                   <a
                     href="#"
                     className="mx-2 font-semibold text-gray-700 dark:text-gray-200"
