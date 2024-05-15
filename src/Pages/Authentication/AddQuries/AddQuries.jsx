@@ -23,16 +23,7 @@ const AddQuries = () => {
             BoycottingReason,
             email: user?.email
         }
-        // console.log(Quries);
-
-        //sent data to the server
-        // fetch("https://alternative-project.vercel.app/newQueries", {
-        //     method:'POST',credentials: 'include',
-        //     headers:{
-        //         'content-type':'application/json'
-        //     },
-        //     body:JSON.stringify(Quries)
-        // },)
+        
 
 
         axios.post("https://alternative-project.vercel.app/newQueries",Quries,
