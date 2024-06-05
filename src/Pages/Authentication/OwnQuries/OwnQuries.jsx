@@ -55,8 +55,6 @@ const OwnQuries = () => {
 
 
 
-  
-
   return (
     <div>
       <section className="dark:bg-gray-100 dark:text-gray-800">
